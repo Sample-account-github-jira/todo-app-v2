@@ -1,23 +1,25 @@
 name: GitHub Security Alerts for Jira
-
 on:
   # schedule:
   #   - cron:  '*/15 * * * *'
-  push
+  push:
+    branches:
+      - main  
 jobs:
   syncSecurityAlerts:
     runs-on: ubuntu-latest
     steps:
       - name: "Sync security alerts to Jira issues"
-        uses: Sample-account-github-jira/github-security-jira@v1.x
+        uses: Gale43/github-security-jira@v1.x
         env:
           GH_SECURITY_TOKEN: ${{ secrets.GitHubSecurityToken }}
           JIRA_TOKEN: ${{ secrets.JiraApiToken }}
           JIRA_HOST: https://gale43.atlassian.net
-          JIRA_USER: manthan.shah@galepartners.com
-          JIRA_PROJECT: WSH
-          JIRA_ISSUE_TYPE: Task
+          JIRA_USER: jira-gale-bot@galepartners.com
+          JIRA_PROJECT: GS
+          JIRA_ISSUE_TYPE: Alert
           #JIRA_RESTRICTED_COMMENT_ROLE: "*"
           #JIRA_WATCHERS: jira-gale-bot@galepartners.com
           #JIRA_COMPONENTS: TestComponent
           JIRA_RESTRICTED_COMMENT_ROLE: Administrators
+
