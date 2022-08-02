@@ -1,5 +1,6 @@
 ![GitHub Security Alerts for Jira](https://github.com/Sample-account-github-jira/Todo-Application/workflows/GitHub%20Security%20Alerts%20for%20Jira/badge.svg)
 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
